@@ -1,0 +1,20 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Query {
+  health: Health
+  stakers: [String]
+  staker(address: String!): Staker,
+  txs(address: String, txid: String, asset: String, type: [String], offset: Int!, limit: Int!): Transactions,
+  assets(asset: [String]!): [Asset],
+  pools: [String]!,
+  poolData(asset: [String]!): [Pool],
+  stakerPoolData(address: String!, asset: [String]!): [StakerPoolData],
+  poolAddresses: PoolAddresses,
+  network: NetworkData,
+  nodes: [Node],
+  constants: Constants,
+  lastBlock: LastBlock
+}
+

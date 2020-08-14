@@ -1,0 +1,5 @@
+type Asset {
+    asset: String!
+    dateCreated: Int!
+    priceRune: String!
+}

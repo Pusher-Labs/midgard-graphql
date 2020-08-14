@@ -1,0 +1,42 @@
+
+type Transactions {
+    count: Int!
+    txs: [Transaction]!
+}
+
+type Transaction {
+    pool: String!
+    type: String! # todo: enum this
+    status: String! # todo: enum this
+    in: TransactionDetail!
+    out: [TransactionDetail]!
+    date: Int!
+    gas: AssetAmount!
+    options: TransactionOptions
+    height: String!
+    events: TransactionEvent
+}
+
+type TransactionDetail {
+    txID: String!
+    memo: String!
+    address: String!
+    coins: [AssetAmount]!
+}
+
+type TransactionOptions {
+    priceTarget: String
+    withdrawBasisPoints: String
+    asymmetry: String
+}
+
+type TransactionEvent {
+    fee: String!
+    stakeUnits: String!
+    slip: String!
+}
+
+type AssetAmount {
+    asset: String!
+    amount: String!
+}

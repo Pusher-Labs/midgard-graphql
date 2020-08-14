@@ -1,0 +1,43 @@
+type Constants {
+    int_64_values: Int64Values
+    bool_values:BoolValues
+    string_values: StringValues
+}
+
+type Int64Values {
+    BadValidatorRate: Int!
+    BlocksPerYear: Int!
+    DesireValidatorSet: Int!
+    DoubleSignMaxAge: Int!
+    EmissionCurve: Int!
+    FailKeySignSlashPoints: Int!
+    FailKeygenSlashPoints: Int!
+    FundMigrationInterval: Int!
+    JailTimeKeygen: Int!
+    JailTimeKeysign: Int!
+    LackOfObservationPenalty: Int!
+    MinimumBondInRune: Int!
+    MinimumNodesForBFT: Int!
+    MinimumNodesForYggdrasil: Int!
+    NewPoolCycle: Int!
+    ObserveSlashPoints: Int!
+    OldValidatorRate: Int!
+    RotatePerBlockHeight: Int!
+    RotateRetryBlocks: Int!
+    SigningTransactionPeriod: Int!
+    StakeLockUpBlocks: Int!
+    TransactionFee: Int!
+    ValidatorRotateInNumBeforeFull: Int!
+    ValidatorRotateNumAfterFull: Int!
+    ValidatorRotateOutNumBeforeFull: Int!
+    WhiteListGasAsset: Int!
+    YggFundLimit: Int!
+}
+
+type BoolValues {
+    StrictBondStakeRatio: Boolean!
+}
+
+type StringValues {
+    DefaultPoolStatus: String!
+}

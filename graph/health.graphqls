@@ -1,0 +1,7 @@
+
+
+type Health {
+    database: Boolean!
+    scannerHeight: Int!
+    catching_up: Boolean!
+}

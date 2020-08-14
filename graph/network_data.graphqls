@@ -1,0 +1,34 @@
+type NetworkData {
+    bondMetrics: BondMetrics!
+    activeBonds: [String]!
+    standbyBonds: [String!]
+    totalStaked: String!
+    activeNodeCount: Int!
+    standbyNodeCount: Int!
+    totalReserve: String!
+    poolShareFactor: String!
+    blockRewards: BlockReward
+    bondingROI: String!
+    stakingROI: String!
+    nextChurnHeight: String!
+    poolActivationCountdown: Int!
+}
+
+type BondMetrics {
+    totalActiveBond: String!
+    averageActiveBond: String!
+    medianActiveBond: String!
+    minimumActiveBond: String!
+    maximumActiveBond: String!
+    totalStandbyBond: String!
+    averageStandbyBond: String!
+    medianStandbyBond: String!
+    minimumStandbyBond: String!
+    maximumStandbyBond: String!
+}
+
+type BlockReward {
+    blockReward: String!
+    bondReward: String!
+    stakeReward: String!
+}

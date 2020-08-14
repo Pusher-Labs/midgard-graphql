@@ -1,0 +1,4 @@
+type Node {
+    secp256k1: String!
+    ed25519: String!
+}

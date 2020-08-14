@@ -1,0 +1,6 @@
+type StakerPoolData {
+    asset: String!
+    stakeUnits: String!
+    dateFirstStaked: Int!
+    heightLastStaked: Int!
+}

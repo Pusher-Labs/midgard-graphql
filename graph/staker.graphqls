@@ -1,0 +1,8 @@
+
+
+type Staker {
+    poolsArray: [String]!
+    totalStaked: String!
+    totalEarned: String!
+    totalROI: String!
+}

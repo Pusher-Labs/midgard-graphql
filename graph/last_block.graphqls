@@ -1,0 +1,11 @@
+
+# TODO -> http://18.158.69.134:8080/v1/doc#operation/GetThorchainProxiedLastblock
+# lastobservedin, lastsignedout are int in the docs
+# but return as strings
+
+type LastBlock {
+    chain: String!
+    lastobservedin: String!
+    lastsignedout: String!
+    thorchain: String!
+}

@@ -1,0 +1,9 @@
+type PoolAddresses {
+    current: [PoolAddress]!
+}
+
+type PoolAddress {
+    chain: String!
+    pub_key: String!
+    address: String!
+}
