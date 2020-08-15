@@ -3,8 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="21b128ae-9512-4997-8e5b-62aaa773b172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/graph/resolver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/schema.resolvers.go" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schema.resolvers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gqlgen.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gqlgen.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/asset.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/asset.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/constants.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/constants.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/generated/generated.go" beforeDir="false" afterPath="$PROJECT_DIR$/graph/generated/generated.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/health.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/health.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/last_block.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/last_block.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/network_data.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/network_data.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/node.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/node.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/pool.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/pool.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/pool_addresses.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/pool_addresses.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/staker.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/staker.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/staker_pool_data.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/staker_pool_data.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/transaction.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/transaction.graphqls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +54,11 @@
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/graph/schemas" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

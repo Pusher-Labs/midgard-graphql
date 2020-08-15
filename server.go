@@ -24,7 +24,7 @@ func main() {
 	if err != nil {
 		fmt.Errorf("error creating resolver: %v", err)
 	}
-	
+
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: r}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))

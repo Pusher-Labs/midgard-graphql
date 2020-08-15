@@ -1474,13 +1474,13 @@ func (ec *executionContext) introspectType(name string) (*introspection.Type, er
 }
 
 var sources = []*ast.Source{
-	&ast.Source{Name: "graph/asset.graphqls", Input: `type Asset {
+	&ast.Source{Name: "graph/schemas/asset.graphqls", Input: `type Asset {
     asset: String!
     dateCreated: Int!
     priceRune: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/constants.graphqls", Input: `type Constants {
+	&ast.Source{Name: "graph/schemas/constants.graphqls", Input: `type Constants {
     int_64_values: Int64Values
     bool_values:BoolValues
     string_values: StringValues
@@ -1524,7 +1524,7 @@ type StringValues {
     DefaultPoolStatus: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/health.graphqls", Input: `
+	&ast.Source{Name: "graph/schemas/health.graphqls", Input: `
 
 type Health {
     database: Boolean!
@@ -1532,7 +1532,7 @@ type Health {
     catching_up: Boolean!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/last_block.graphqls", Input: `
+	&ast.Source{Name: "graph/schemas/last_block.graphqls", Input: `
 # TODO -> http://18.158.69.134:8080/v1/doc#operation/GetThorchainProxiedLastblock
 # lastobservedin, lastsignedout are int in the docs
 # but return as strings
@@ -1544,7 +1544,7 @@ type LastBlock {
     thorchain: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/network_data.graphqls", Input: `type NetworkData {
+	&ast.Source{Name: "graph/schemas/network_data.graphqls", Input: `type NetworkData {
     bondMetrics: BondMetrics!
     activeBonds: [String]!
     standbyBonds: [String!]
@@ -1579,12 +1579,12 @@ type BlockReward {
     stakeReward: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/node.graphqls", Input: `type Node {
+	&ast.Source{Name: "graph/schemas/node.graphqls", Input: `type Node {
     secp256k1: String!
     ed25519: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/pool.graphqls", Input: `type Pool {
+	&ast.Source{Name: "graph/schemas/pool.graphqls", Input: `type Pool {
     asset: String!
     status: String! # todo: enum this
     price: String!
@@ -1625,7 +1625,7 @@ type BlockReward {
     poolROI12: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/pool_addresses.graphqls", Input: `type PoolAddresses {
+	&ast.Source{Name: "graph/schemas/pool_addresses.graphqls", Input: `type PoolAddresses {
     current: [PoolAddress]!
 }
 
@@ -1635,7 +1635,7 @@ type PoolAddress {
     address: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/schema.graphqls", Input: `# GraphQL schema example
+	&ast.Source{Name: "graph/schemas/schema.graphqls", Input: `# GraphQL schema example
 #
 # https://gqlgen.com/getting-started/
 
@@ -1656,7 +1656,7 @@ type Query {
 }
 
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/staker.graphqls", Input: `
+	&ast.Source{Name: "graph/schemas/staker.graphqls", Input: `
 
 type Staker {
     poolsArray: [String]!
@@ -1665,14 +1665,14 @@ type Staker {
     totalROI: String!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/staker_pool_data.graphqls", Input: `type StakerPoolData {
+	&ast.Source{Name: "graph/schemas/staker_pool_data.graphqls", Input: `type StakerPoolData {
     asset: String!
     stakeUnits: String!
     dateFirstStaked: Int!
     heightLastStaked: Int!
 }
 `, BuiltIn: false},
-	&ast.Source{Name: "graph/transaction.graphqls", Input: `
+	&ast.Source{Name: "graph/schemas/transaction.graphqls", Input: `
 type Transactions {
     count: Int!
     txs: [Transaction]!
