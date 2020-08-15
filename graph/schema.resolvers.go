@@ -19,7 +19,7 @@ import (
 func (r *queryResolver) Health(ctx context.Context) (*model.Health, error) {
 	health := &model.Health{}
 
-	resp, err := DefaultHttpClient.Get("http://18.158.69.134:8080/v1/health")
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/health", r.baseUrl))
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -36,7 +36,7 @@ func (r *queryResolver) Health(ctx context.Context) (*model.Health, error) {
 func (r *queryResolver) Stakers(ctx context.Context) ([]*string, error) {
 	var stakers []*string
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/stakers", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/stakers", r.baseUrl))
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -53,9 +53,7 @@ func (r *queryResolver) Stakers(ctx context.Context) ([]*string, error) {
 func (r *queryResolver) Staker(ctx context.Context, address string) (*model.Staker, error) {
 	staker := &model.Staker{}
 
-	fmt.Printf("address is %s", address)
-
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("http://18.158.69.134:8080/v1/stakers/%s", address))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/stakers/%s", r.baseUrl, address))
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -72,7 +70,7 @@ func (r *queryResolver) Staker(ctx context.Context, address string) (*model.Stak
 func (r *queryResolver) Txs(ctx context.Context, address *string, txid *string, asset *string, typeArg []*string, offset int, limit int) (*model.Transactions, error) {
 	transactions := &model.Transactions{}
 
-	baseUrl := fmt.Sprintf("%s/txs", BaseUrl)
+	baseUrl := fmt.Sprintf("%s/txs", r.baseUrl)
 
 	req, err := http.NewRequest("GET", baseUrl, nil)
 	if err != nil {
@@ -118,7 +116,7 @@ func (r *queryResolver) Txs(ctx context.Context, address *string, txid *string, 
 
 	req.URL.RawQuery = q.Encode()
 
-	resp, err := DefaultHttpClient.Get(req.URL.String())
+	resp, err := r.httpClient.Get(req.URL.String())
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -143,9 +141,7 @@ func (r *queryResolver) Assets(ctx context.Context, asset []*string) ([]*model.A
 
 	assetString := strings.Join(assets[:], ",")
 
-	baseUrl := fmt.Sprintf("%s/assets", BaseUrl)
-
-	req, err := http.NewRequest("GET", baseUrl, nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/assets", r.baseUrl), nil)
 	if err != nil {
 		log.Print(err)
 		return nil, err
@@ -156,7 +152,7 @@ func (r *queryResolver) Assets(ctx context.Context, asset []*string) ([]*model.A
 
 	req.URL.RawQuery = q.Encode()
 
-	resp, err := DefaultHttpClient.Get(req.URL.String())
+	resp, err := r.httpClient.Get(req.URL.String())
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -173,7 +169,7 @@ func (r *queryResolver) Assets(ctx context.Context, asset []*string) ([]*model.A
 func (r *queryResolver) Pools(ctx context.Context) ([]*string, error) {
 	var pools []*string
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/pools", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/pools", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}
@@ -197,9 +193,7 @@ func (r *queryResolver) PoolData(ctx context.Context, asset []*string) ([]*model
 
 	assetString := strings.Join(assets[:], ",")
 
-	baseUrl := fmt.Sprintf("%s/pools/detail", BaseUrl)
-
-	req, err := http.NewRequest("GET", baseUrl, nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/pools/detail", r.baseUrl), nil)
 	if err != nil {
 		log.Print(err)
 		return nil, err
@@ -210,7 +204,7 @@ func (r *queryResolver) PoolData(ctx context.Context, asset []*string) ([]*model
 
 	req.URL.RawQuery = q.Encode()
 
-	resp, err := DefaultHttpClient.Get(req.URL.String())
+	resp, err := r.httpClient.Get(req.URL.String())
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -235,9 +229,7 @@ func (r *queryResolver) StakerPoolData(ctx context.Context, address string, asse
 
 	assetString := strings.Join(assets[:], ",")
 
-	baseUrl := fmt.Sprintf("%s/stakers/%s/pools", BaseUrl, address)
-
-	req, err := http.NewRequest("GET", baseUrl, nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/stakers/%s/pools", r.baseUrl, address), nil)
 	if err != nil {
 		log.Print(err)
 		return nil, err
@@ -248,7 +240,7 @@ func (r *queryResolver) StakerPoolData(ctx context.Context, address string, asse
 
 	req.URL.RawQuery = q.Encode()
 
-	resp, err := DefaultHttpClient.Get(req.URL.String())
+	resp, err := r.httpClient.Get(req.URL.String())
 	if err != nil {
 		panic(fmt.Errorf("error fetching stuff request"))
 		return nil, err
@@ -265,7 +257,7 @@ func (r *queryResolver) StakerPoolData(ctx context.Context, address string, asse
 func (r *queryResolver) PoolAddresses(ctx context.Context) (*model.PoolAddresses, error) {
 	var body *model.PoolAddresses
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/thorchain/pool_addresses", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/thorchain/pool_addresses", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}
@@ -281,7 +273,7 @@ func (r *queryResolver) PoolAddresses(ctx context.Context) (*model.PoolAddresses
 func (r *queryResolver) Network(ctx context.Context) (*model.NetworkData, error) {
 	var body *model.NetworkData
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/network", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/network", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}
@@ -297,7 +289,7 @@ func (r *queryResolver) Network(ctx context.Context) (*model.NetworkData, error)
 func (r *queryResolver) Nodes(ctx context.Context) ([]*model.Node, error) {
 	var body []*model.Node
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/nodes", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/nodes", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}
@@ -313,7 +305,7 @@ func (r *queryResolver) Nodes(ctx context.Context) ([]*model.Node, error) {
 func (r *queryResolver) Constants(ctx context.Context) (*model.Constants, error) {
 	var body *model.Constants
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/thorchain/constants", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/thorchain/constants", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}
@@ -329,7 +321,7 @@ func (r *queryResolver) Constants(ctx context.Context) (*model.Constants, error)
 func (r *queryResolver) LastBlock(ctx context.Context) (*model.LastBlock, error) {
 	var body *model.LastBlock
 
-	resp, err := DefaultHttpClient.Get(fmt.Sprintf("%s/thorchain/lastblock", BaseUrl))
+	resp, err := r.httpClient.Get(fmt.Sprintf("%s/thorchain/lastblock", r.baseUrl))
 	if err != nil {
 		return nil, err
 	}

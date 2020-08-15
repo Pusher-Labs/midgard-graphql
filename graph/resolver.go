@@ -9,11 +9,21 @@ import (
 //
 // It serves as dependency injection for your app, add any dependencies you require here.
 
-type Resolver struct{}
-
-var DefaultHttpClient = &http.Client{
-	Timeout: time.Second * 10,
+type Resolver struct{
+	httpClient	*http.Client
+	baseUrl		string
 }
 
-const BaseUrl = "http://18.158.69.134:8080/v1"
+func NewResolver() (*Resolver, error) {
+
+	r := &Resolver{
+		httpClient: &http.Client{
+			Timeout: time.Second * 10,
+		},
+		baseUrl: "http://18.158.69.134:8080/v1",
+	}
+
+	return r, nil
+}
+
 
