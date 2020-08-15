@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21b128ae-9512-4997-8e5b-62aaa773b172" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gqlgen.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gqlgen.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/asset.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/asset.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/constants.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/constants.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/generated/generated.go" beforeDir="false" afterPath="$PROJECT_DIR$/graph/generated/generated.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/health.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/health.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/last_block.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/last_block.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/network_data.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/network_data.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/node.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/node.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/pool.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/pool.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/pool_addresses.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/pool_addresses.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/schema.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/staker.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/staker.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/staker_pool_data.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/staker_pool_data.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/transaction.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/graph/schemas/transaction.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/midgard-graphql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +35,7 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GitIgnore" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
